@@ -1,5 +1,5 @@
 
-
+#include<fstream>
 #include"Board.h"
 #include"Pawn.h"
 #include"Bishop.h"
@@ -12,7 +12,6 @@
 #include<Windows.h>
 #include<iostream>
 using namespace std;
-
 
 
 
@@ -96,12 +95,12 @@ Board::Board()
 	}
 }
 
-
 void color(int k)
 {
 	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 	SetConsoleTextAttribute(hConsole, k);
 }
+
 void PrintBox(int sr, int sc, int rdim, int cdim, char s, int c)
 {
 	color(c);
@@ -127,6 +126,7 @@ void PrintBox(int sr, int sc, int rdim, int cdim, char s, int c)
 		}
 	}
 }
+
 void PrintGrid(int Rows, int cols, int d, int rdim, int cdim, char s)
 {
 	for (int r = 0; r < d; r++)
@@ -153,11 +153,6 @@ void PrintGrid(int Rows, int cols, int d, int rdim, int cdim, char s)
 	color(2);
 }
 
-
-
-
-
-
 void Board::display()
 {
 	PrintGrid(40, 40, 9, 5, 5, -37);
@@ -167,21 +162,32 @@ void Board::display()
 		{
 			if (Ps[ri][ci] != nullptr)
 			{
-				gotoRowCol(((ri + 4 * ri) + 2), ((ci + 4 * ci) + 2));
+				if (Ps[ri][ci]->getcolor() == Black)
+				{
+					gotoRowCol(((ri + 4 * ri) + 2), ((ci + 4 * ci) + 2));
+					color(6);
+					Ps[ri][ci]->draw();
+				}
+				if (Ps[ri][ci]->getcolor() == White)
+				{
+					gotoRowCol(((ri + 4 * ri) + 2), ((ci + 4 * ci) + 2));
+					color(4);
+					Ps[ri][ci]->draw();
+				}
+				/*gotoRowCol(((ri + 4 * ri) + 2), ((ci + 4 * ci) + 2));
 				color(6);
 
-				Ps[ri][ci]->draw();
+				Ps[ri][ci]->draw();*/
 			}
 		}
 	}
 	color(7);
 }
+
 Piece* Board::getpiece(int r, int c)
 {
 	return Ps[r][c];
 }
-
-
 
 void Board::move(int sr, int sc, int dr, int dc)
 {
@@ -190,38 +196,3 @@ void Board::move(int sr, int sc, int dr, int dc)
 	Ps[dr][dc]->move(dr, dc);
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*cout << "\n\t\t\t\t Shogi Game";
-
-	cout << "\n\n\n\n";
-	cout << "\t0\t1\t2\t3\t4\t5\t6\t7\t8\n\n\n";
-	for (int ri = 0;ri < 9;ri++)
-		{
-			cout << ri;
-			for (int ci = 0;ci < 9;ci++)
-			{
-
-				if (Ps[ri][ci] == nullptr)
-				{
-					cout << "\t" << " ";
-				}
-				else
-
-					Ps[ri][ci]->draw();
-			}
-			cout << "\n\n";
-		}*/

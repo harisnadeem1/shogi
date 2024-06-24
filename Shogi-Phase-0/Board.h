@@ -16,6 +16,6 @@ public:
 	
 	
 	void move(int sr, int sc, int dr, int dc);
-	//bool ismypiece(int sri, int sci, int dri, int dci);
+	
 };
 

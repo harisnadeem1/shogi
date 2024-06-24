@@ -15,3 +15,33 @@ char Lance::getchar()
 {
 	return ((C == Black) ? 'L' : 'l');
 }
+
+bool Lance:: IsLegalPlace(int sri, int sci, int dri, int dci, Board* b)
+{
+
+	if (sci == dci)
+	{
+
+		if (b->getpiece(sri, sci)->getcolor() == White)
+		{
+			int rc = -1;
+			for (int ri = rc + sri; ri != dri; ri = ri + rc)
+			{
+				if (b->getpiece(ri, sci) != nullptr)
+					return false;
+			}
+			return true;
+		}
+		else if (b->getpiece(sri, sci)->getcolor() == Black)
+		{
+			int rc = 1;
+			for (int ri = rc + sri; ri != dri; ri = ri + rc)
+			{
+				if (b->getpiece(ri, sci) != nullptr)
+					return false;
+			}
+			return true;
+		}
+	}
+	return false;
+}

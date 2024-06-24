@@ -20,6 +20,12 @@ public:
 	bool validDestinationSelect(int sr, int sc, Player* P);
 	void turn_change();
 	void highlight(int sri, int sci);
+	void unhighlight();
 	void  savegame();
-	
+	void loadgame();
+	//bool checkking();
+	/*bool IsCheckBlack(Colour c);
+	bool IsCheckWhite(Colour c);*/
+	//bool IsCastle(int sri, int sci, int dci);
+	//void Castle(int sri, int sci, int dri, int dci);*/
 };

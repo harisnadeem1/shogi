@@ -15,3 +15,14 @@ char King::getchar()
 {
 	return ((C == Black) ? 'K' : 'k');
 }
+
+bool King::IsLegalPlace(int sri, int sci, int dri, int dci, Board* b)
+{
+	int deltar = dri - sri;
+	int deltac = dci - sci;
+	if (((deltar >= -1) && (deltar <= 1)) && ((deltac >= -1) && (deltac <= 1)))
+	{
+		return true;
+	}
+	return false;
+}

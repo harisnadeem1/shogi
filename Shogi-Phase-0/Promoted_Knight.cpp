@@ -1,22 +1,25 @@
-#include "gold.h"
+#include "Promoted_Knight.h"
 #include<iostream>
 using namespace std;
-gold::gold(int r, int c, Colour _c, Board* B) :Piece(r, c, _c, B)
+
+Promoted_Knight::Promoted_Knight(int r, int c, Colour _c, Board* B) :Piece(r, c, _c, B)
 {
 
 }
 
-void gold::draw()
+void Promoted_Knight::draw()
 {
-	cout  << ((C == Black) ? 'G' : 'g');
-}
-char gold::getchar()
-{
-	return ((C == Black) ? 'G' : 'g');
+	cout << ((C == Black) ? "PN" : "pn");
 }
 
-bool gold:: IsLegalPlace(int sri, int sci, int dri, int dci, Board* b)
+char Promoted_Knight::getchar()
 {
+	return ((C == Black) ? 'PN' : 'pn');
+}
+
+bool Promoted_Knight::IsLegalPlace(int sri, int sci, int dri, int dci, Board* b)
+{
+
 	if (b->getpiece(sri, sci)->getcolor() == White) {
 		if (dri + 1 == sri && sci == dci)
 			return true;
@@ -43,7 +46,5 @@ bool gold:: IsLegalPlace(int sri, int sci, int dri, int dci, Board* b)
 				return true;
 		}
 	}
-
-
 	return false;
 }

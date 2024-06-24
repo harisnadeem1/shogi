@@ -1,22 +1,24 @@
-#include "gold.h"
+#include "Promoted_Pawn.h"
 #include<iostream>
 using namespace std;
-gold::gold(int r, int c, Colour _c, Board* B) :Piece(r, c, _c, B)
+
+Promoted_Pawn::Promoted_Pawn(int r, int c, Colour _c, Board* B) :Piece(r, c, _c, B)
 {
 
 }
 
-void gold::draw()
+void Promoted_Pawn::draw()
 {
-	cout  << ((C == Black) ? 'G' : 'g');
-}
-char gold::getchar()
-{
-	return ((C == Black) ? 'G' : 'g');
+	cout << ((C == Black) ? "PP" : "pp");
 }
 
-bool gold:: IsLegalPlace(int sri, int sci, int dri, int dci, Board* b)
+char Promoted_Pawn::getchar()
 {
+	return ((C == Black) ? 'PP' : 'pp');
+}
+bool Promoted_Pawn::IsLegalPlace(int sri, int sci, int dri, int dci, Board* b)
+{
+
 	if (b->getpiece(sri, sci)->getcolor() == White) {
 		if (dri + 1 == sri && sci == dci)
 			return true;
@@ -43,7 +45,5 @@ bool gold:: IsLegalPlace(int sri, int sci, int dri, int dci, Board* b)
 				return true;
 		}
 	}
-
-
 	return false;
 }

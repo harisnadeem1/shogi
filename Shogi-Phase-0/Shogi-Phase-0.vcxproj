@@ -137,6 +137,12 @@
     <ClInclude Include="Pawn.h" />
     <ClInclude Include="Piece.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="Promoted_Bishop.h" />
+    <ClInclude Include="Promoted_Knight.h" />
+    <ClInclude Include="Promoted_Lance.h" />
+    <ClInclude Include="Promoted_Pawn.h" />
+    <ClInclude Include="Promoted_Rook.h" />
+    <ClInclude Include="Promoted_Silver.h" />
     <ClInclude Include="Rook.h" />
     <ClInclude Include="Shogi.h" />
     <ClInclude Include="silver.h" />
@@ -152,6 +158,12 @@
     <ClCompile Include="Pawn.cpp" />
     <ClCompile Include="Piece.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="Promoted_Bishop.cpp" />
+    <ClCompile Include="Promoted_Knight.cpp" />
+    <ClCompile Include="Promoted_Lance.cpp" />
+    <ClCompile Include="Promoted_Pawn.cpp" />
+    <ClCompile Include="Promoted_Rook.cpp" />
+    <ClCompile Include="Promoted_Silver.cpp" />
     <ClCompile Include="Rook.cpp" />
     <ClCompile Include="Shogi.cpp" />
     <ClCompile Include="silver.cpp" />

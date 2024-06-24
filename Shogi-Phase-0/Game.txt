@@ -1,10 +1,10 @@
 1
 LNSGKGSNL
--B-----R-
-PPPPPPPPP
+-B--p--R-
+-PP--PPP-
+P-------P
 ---------
---------p
----------
-pppppppp-
+p-------p
+-ppP-ppp-
 -b-----r-
 lnsgkgsnl

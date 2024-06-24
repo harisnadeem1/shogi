@@ -1,22 +1,25 @@
-#include "gold.h"
+#include "Promoted_Lance.h"
 #include<iostream>
 using namespace std;
-gold::gold(int r, int c, Colour _c, Board* B) :Piece(r, c, _c, B)
+
+Promoted_Lance::Promoted_Lance(int r, int c, Colour _c, Board* B) :Piece(r, c, _c, B)
 {
 
 }
 
-void gold::draw()
+void Promoted_Lance::draw()
 {
-	cout  << ((C == Black) ? 'G' : 'g');
-}
-char gold::getchar()
-{
-	return ((C == Black) ? 'G' : 'g');
+	cout << ((C == Black) ? "PL" : "pl");
 }
 
-bool gold:: IsLegalPlace(int sri, int sci, int dri, int dci, Board* b)
+char Promoted_Lance::getchar()
 {
+	return ((C == Black) ? 'PL' : 'pl');
+}
+
+bool Promoted_Lance::IsLegalPlace(int sri, int sci, int dri, int dci, Board* b)
+{
+
 	if (b->getpiece(sri, sci)->getcolor() == White) {
 		if (dri + 1 == sri && sci == dci)
 			return true;
@@ -43,7 +46,5 @@ bool gold:: IsLegalPlace(int sri, int sci, int dri, int dci, Board* b)
 				return true;
 		}
 	}
-
-
 	return false;
 }
